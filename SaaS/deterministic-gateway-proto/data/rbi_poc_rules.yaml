@@ -1,0 +1,218 @@
+# RBI / DPSS POC Rules — Test Corpus
+# Each rule has the source text and expected extraction output for benchmarking.
+# 11 rules covering: obligations, prohibitions, deadlines, frequencies, retention, cooling periods.
+# Note: rbi_it_26 split into 26a (VA) and 26b (PT) — compound rules must be atomic.
+
+rules:
+  # ── RBI IT Framework Rules ──────────────────────────────────────────────────
+
+  - id: "rbi_it_15"
+    document_id: "RBI/2023-24/107"
+    section: "15"
+    text: "All critical IT applications must provide comprehensive audit trails with sufficient detail to facilitate comprehensive audits."
+    expected:
+      rule_type: "obligation"
+      subject: "regulated_entity"
+      action: "enforce_audit_trails"
+      resource: "critical_it_applications"
+      effect: "required"
+      temporal:
+        frequency: null
+        deadline: null
+        retention: null
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "audit_trail_report"
+
+  - id: "rbi_it_16"
+    document_id: "RBI/2023-24/107"
+    section: "16"
+    text: "Regulated entities shall use only non-deprecated and approved cryptographic algorithms for protecting sensitive data in transit and at rest."
+    expected:
+      rule_type: "obligation"
+      subject: "regulated_entity"
+      action: "enforce_crypto_standards"
+      resource: "crypto_algorithms"
+      effect: "required"
+      temporal:
+        frequency: null
+        deadline: null
+        retention: null
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "crypto_compliance_report"
+
+  - id: "rbi_it_19"
+    document_id: "RBI/2023-24/107"
+    section: "19"
+    text: "Access to critical systems shall be granted on a need-to-know basis. Multi-factor authentication must be enforced for all privileged user accounts."
+    expected:
+      rule_type: "obligation"
+      subject: "regulated_entity"
+      action: "enforce_mfa"
+      resource: "privileged_accounts"
+      effect: "required"
+      temporal:
+        frequency: null
+        deadline: null
+        retention: null
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "access_control_report"
+
+  - id: "rbi_it_26a"
+    document_id: "RBI/2023-24/107"
+    section: "26"
+    text: "Vulnerability Assessment shall be conducted at least once in every six months for critical systems in the DMZ."
+    expected:
+      rule_type: "frequency_rule"
+      subject: "regulated_entity"
+      action: "conduct_va"
+      resource: "critical_systems_dmz"
+      effect: "required"
+      temporal:
+        frequency: "every_6_months"
+        deadline: null
+        retention: null
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "va_report"
+
+  - id: "rbi_it_26b"
+    document_id: "RBI/2023-24/107"
+    section: "26"
+    text: "Penetration Testing shall be conducted at least once a year for critical systems in the DMZ."
+    expected:
+      rule_type: "frequency_rule"
+      subject: "regulated_entity"
+      action: "conduct_pt"
+      resource: "critical_systems_dmz"
+      effect: "required"
+      temporal:
+        frequency: "every_12_months"
+        deadline: null
+        retention: null
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "pt_report"
+
+  - id: "rbi_it_29"
+    document_id: "RBI/2023-24/107"
+    section: "29"
+    text: "Disaster Recovery drills shall be conducted at least on a half-yearly basis to ensure the effectiveness of the DR plan."
+    expected:
+      rule_type: "obligation"
+      subject: "regulated_entity"
+      action: "conduct_dr_drill"
+      resource: "dr_systems"
+      effect: "required"
+      temporal:
+        frequency: "every_6_months"
+        deadline: null
+        retention: null
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "dr_drill_report"
+
+  # ── DPSS Rules ──────────────────────────────────────────────────────────────
+
+  - id: "dpss_15"
+    document_id: "RBI/DPSS/2024-25/123"
+    section: "15"
+    text: "Access to payment system applications and databases shall follow the principle of least privilege. Inactive sessions must be automatically terminated after a defined timeout period."
+    expected:
+      rule_type: "obligation"
+      subject: "payment_system_operator"
+      action: "implement_least_privilege"
+      resource: "payment_systems"
+      effect: "required"
+      temporal:
+        frequency: null
+        deadline: null
+        retention: null
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "access_policy_report"
+
+  - id: "dpss_21"
+    document_id: "RBI/DPSS/2024-25/123"
+    section: "21"
+    text: "Critical patches released by the vendor must be applied immediately upon availability. Non-critical patches shall be applied within a reasonable timeframe not exceeding one month."
+    expected:
+      rule_type: "obligation"
+      subject: "payment_system_operator"
+      action: "apply_critical_patches"
+      resource: "payment_systems"
+      effect: "required"
+      temporal:
+        frequency: null
+        deadline: "within_24_hours"
+        retention: null
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "patch_compliance_report"
+
+  - id: "dpss_22"
+    document_id: "RBI/DPSS/2024-25/123"
+    section: "22"
+    text: "Any cybersecurity incident or breach of security shall be reported to RBI within 6 hours of detection of the incident."
+    expected:
+      rule_type: "deadline_rule"
+      subject: "payment_system_operator"
+      action: "report_incident"
+      resource: "incident_reports"
+      effect: "required"
+      temporal:
+        frequency: null
+        deadline: "within_6_hours"
+        retention: null
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "incident_report"
+
+  - id: "dpss_27e"
+    document_id: "RBI/DPSS/2024-25/123"
+    section: "27(e)"
+    text: "Audit logs of all system activities shall be maintained and preserved for a minimum period of five years."
+    expected:
+      rule_type: "retention_rule"
+      subject: "payment_system_operator"
+      action: "preserve_audit_logs"
+      resource: "audit_logs"
+      effect: "required"
+      temporal:
+        frequency: null
+        deadline: null
+        retention: "minimum_5_years"
+        cooling_period: null
+      evidence:
+        required: true
+        artifact_type: "log_retention_report"
+
+  - id: "dpss_31g"
+    document_id: "RBI/DPSS/2024-25/123"
+    section: "31(g)"
+    text: "A minimum cooling period of 12 hours shall be enforced before activating a new mobile number or email address registered for transaction authentication."
+    expected:
+      rule_type: "cooling_period_rule"
+      subject: "payment_system_operator"
+      action: "enforce_cooling_period"
+      resource: "mobile_email_credentials"
+      effect: "required"
+      temporal:
+        frequency: null
+        deadline: null
+        retention: null
+        cooling_period: "12_hours"
+      evidence:
+        required: true
+        artifact_type: "cooling_period_log"

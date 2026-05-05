@@ -1,0 +1,65 @@
+meta:
+  version: "2026.03.0"
+  signature: ""
+
+rate_limit_per_minute: 120
+numeric_tolerance: 0.01
+
+pii_patterns:
+  aadhaar: "\\b\\d{4}\\s?\\d{4}\\s?\\d{4}\\b"
+  pan: "\\b[A-Z]{5}[0-9]{4}[A-Z]\\b"
+  credit_card: "\\b(?:\\d[ -]*?){13,19}\\b"
+
+jailbreak_deny_list:
+  - "ignore previous instructions"
+  - "reveal system prompt"
+  - "developer mode enabled"
+  - "bypass safety"
+  - "jailbreak"
+
+jailbreak_regex_deny_list:
+  - "(?i)simulate\\s+developer\\s+mode"
+  - "(?i)exfiltrate\\s+system\\s+prompt"
+  - "(?i)ignore\\W*all\\W*prior\\W*rules"
+
+numeric_rules:
+  loan_rate_card:
+    home_loan: 8.35
+    personal_loan: 13.99
+    default: 10.0
+
+semantic_layer:
+  enabled: true
+  mode: "sync_gated"
+  timeout_ms: 10
+  min_risk_score: 2
+  fail_mode: "allow"
+  min_confidence: 0.80
+  onnx_model_path: "./models/semantic_setfit_int8.onnx"
+  tokenizer_path: "./models/tokenizer.json"
+  fasttext_model_path: "./models/lid.176.ftz"
+  max_length: 128
+  labels:
+    - "safe"
+    - "unsafe"
+  block_labels:
+    - "unsafe"
+    - "jailbreak"
+    - "policy_bypass"
+    - "data_exfil"
+  language_allowlist:
+    - "en"
+    - "hi"
+    - "mr"
+    - "bn"
+    - "ta"
+    - "te"
+    - "kn"
+    - "ml"
+    - "gu"
+    - "pa"
+    - "ur"
+    - "hinglish"
+  risk_keywords:
+    - "act as unrestricted model"
+    - "disable all safety checks"

@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+models/*.onnx
+models/*.ftz
+models/tokenizer.json

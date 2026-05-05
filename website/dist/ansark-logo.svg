@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120">
+  <defs>
+    <linearGradient id="ansarkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#7dd3fc" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+    <style>
+      .logo-text {
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-weight: 900;
+        font-size: 72px;
+        fill: url(#ansarkGradient);
+        letter-spacing: 2px;
+      }
+    </style>
+  </defs>
+  
+  <!-- Stylized Shark-fin 'A' -->
+  <!-- Left pointing nose/body of the A -->
+  <path d="M 20 85 L 80 25 L 115 85 L 85 85 L 65 50 L 50 65 L 75 85 Z" fill="url(#ansarkGradient)"/>
+  <!-- Top Fin -->
+  <path d="M 70 25 Q 75 5 85 5 Q 80 15 85 25 Z" fill="url(#ansarkGradient)"/>
+  
+  <text x="125" y="85" class="logo-text">NSARK</text>
+</svg>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deterministic AI Gateway — RBI Compliance Demo</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="demo.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap">
+      <div class="header-inner">
+        <div class="logo">
+          <div class="logo-mark">DAG</div>
+          <div>
+            <div class="logo-text">Deterministic AI Gateway</div>
+            <div class="logo-sub">Regulatory Control Pipeline — POC v0.1</div>
+          </div>
+        </div>
+        <div class="status-pill">● API CONNECTED</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-tag">// RBI Compliance Automation Demo</div>
+        <h1>RBI Policy Documents →<br><strong>Structured Compliance Controls</strong></h1>
+        <p>Upload a regulatory PDF. The pipeline extracts enforceable rules, classifies obligation types, resolves
+          entities against a regulatory catalog, and compiles audit-ready Governance YAML — automatically.</p>
+      </div>
+
+      <!-- COMPARISON -->
+      <div style="margin-top: 40px;">
+        <div class="section-label">Proof of Value</div>
+        <div class="compare-bar">
+          <div class="compare-col">
+            <div class="compare-label">Manual Process</div>
+            <div class="compare-item">4–8 hours per document</div>
+            <div class="compare-item">No standard output format</div>
+            <div class="compare-item">Human interpretation variance</div>
+            <div class="compare-item">No version control or audit trail</div>
+            <div class="compare-item">Requires compliance expertise</div>
+          </div>
+          <div class="compare-mid"><span>VS</span></div>
+          <div class="compare-col">
+            <div class="compare-label">This Pipeline</div>
+            <div class="compare-item">Seconds per document</div>
+            <div class="compare-item">Structured ControlIR + Governance YAML</div>
+            <div class="compare-item">Deterministic catalog resolution</div>
+            <div class="compare-item">Versioned, source-attributed output</div>
+            <div class="compare-item">Confidence-routed for human review</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UPLOAD -->
+      <div style="margin-top: 40px;">
+        <div class="section-label">01 — Upload Document</div>
+
+        <div class="file-loaded" id="fileLoaded">
+          <div class="file-icon">PDF</div>
+          <div class="file-name" id="fileName">—</div>
+          <div class="file-size" id="fileSize">—</div>
+        </div>
+
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="pdfInput" accept=".pdf" />
+          <div class="upload-icon">⬆</div>
+          <div class="upload-text">Drop PDF here or <strong>click to browse</strong></div>
+          <div class="upload-hint">Supports: RBI/2023-24/107 · RBI/DPSS/2024-25/123 · any RBI Master Direction</div>
+        </div>
+
+        <div class="controls-row">
+          <div class="field-group">
+            <div class="field-label">Document ID</div>
+            <input type="text" id="docId" placeholder="e.g. RBI/2023-24/107" value="RBI/2023-24/107" />
+          </div>
+          <div class="field-group">
+            <div class="field-label">Effective Date</div>
+            <input type="text" id="effectiveDate" placeholder="e.g. 2024-04-01" value="2024-04-01" />
+          </div>
+          <button class="btn-extract" id="extractBtn" onclick="runExtraction()" disabled>
+            Extract Controls →
+          </button>
+        </div>
+      </div>
+
+      <!-- PROGRESS -->
+      <div class="progress-panel" id="progressPanel">
+        <div class="progress-header">
+          <div class="progress-title">▶ EXTRACTING REGULATORY CONTROLS</div>
+          <div class="progress-stats" id="progressStats">0 / 0</div>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-log" id="progressLog"></div>
+      </div>
+
+      <!-- TIMING BANNER -->
+      <div class="timing-banner" id="timingBanner">
+        <div class="timing-item">
+          <div class="timing-value" id="timingSeconds">—</div>
+          <div class="timing-label">Pipeline Time</div>
+        </div>
+        <div class="timing-vs">
+          vs estimated 4–8 hours manually<br>
+          <span style="color: var(--green); font-size: 13px; font-weight: 600;" id="speedupText">—</span>
+        </div>
+        <div class="timing-item">
+          <div class="timing-value" id="timingClauses">—</div>
+          <div class="timing-label">Clauses Sent</div>
+        </div>
+        <div class="timing-item">
+          <div class="timing-value" id="timingExtracted">—</div>
+          <div class="timing-label">Controls Extracted</div>
+        </div>
+      </div>
+
+      <!-- METRICS -->
+      <div class="metrics-bar" id="metricsBar">
+        <div class="metric-cell">
+          <div class="metric-value green" id="mExtracted">0</div>
+          <div class="metric-label">Extracted</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-value accent" id="mApproved">0</div>
+          <div class="metric-label">Auto-Approved</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-value yellow" id="mReview">0</div>
+          <div class="metric-label">Review Required</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-value" id="mRejected" style="color: var(--red)">0</div>
+          <div class="metric-label">Rejected</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-value green" id="mAccuracy">—</div>
+          <div class="metric-label">Compile Rate</div>
+        </div>
+      </div>
+
+      <!-- RESULTS TABLE -->
+      <div class="results-panel" id="resultsPanel">
+        <div class="section-label">02 — Extracted Controls</div>
+        <div class="table-wrap">
+          <table id="resultsTable">
+            <thead>
+              <tr>
+                <th>Section</th>
+                <th>Rule Type</th>
+                <th>Action</th>
+                <th>Resource</th>
+                <th>Temporal</th>
+                <th>Confidence</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- YAML OUTPUT -->
+      <div class="yaml-panel" id="yamlPanel">
+        <div class="section-label">03 — Governance YAML Output</div>
+        <div class="yaml-header">
+          <div class="yaml-title">compiled_controls.yaml — audit-ready output</div>
+          <button class="btn-download" onclick="downloadYaml()">↓ Download YAML</button>
+        </div>
+        <div class="yaml-body" id="yamlBody"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-text">Deterministic AI Gateway — POC Build · Not for production use</div>
+        <div class="footer-version">pipeline v0.1 · extractor v1.0.0-regulatory</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="demo.js"></script>
+</body>
+
+</html>

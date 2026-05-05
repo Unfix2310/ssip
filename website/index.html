@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANSARK — Enterprise AI Governance Platform</title>
+  <meta name="description"
+    content="Govern enterprise AI usage with deterministic policy enforcement, PII protection, jailbreak controls, output validation, and audit-ready evidence.">
+  <meta name="keywords"
+    content="AI governance, LLM gateway, AI compliance, policy enforcement, PII redaction, prompt injection, audit logs, policy compiler">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%233b82f6'/><text x='50' y='68' text-anchor='middle' font-size='50' font-weight='900' fill='white'>A</text></svg>">
+  <link rel="stylesheet" href="/styles/design-system.css">
+  <link rel="stylesheet" href="/styles/components.css">
+  <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+
+  <!-- ═══ Navigation ═══ -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="ANSARK Home">
+        <img src="/ansark-logo.svg" alt="ANSARK Logo" class="nav-logo-icon"
+          style="background:transparent;box-shadow:none;width:auto;height:32px;">
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/product.html" class="nav-link">Product</a>
+        <a href="/solutions.html" class="nav-link">Solutions</a>
+        <a href="/architecture.html" class="nav-link">Architecture</a>
+        <a href="/security.html" class="nav-link">Security</a>
+      </div>
+      <a href="/contact.html" class="btn btn-primary btn-sm nav-cta">Book Demo</a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="mobile-menu">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/product.html" class="nav-link">Product</a>
+    <a href="/solutions.html" class="nav-link">Solutions</a>
+    <a href="/architecture.html" class="nav-link">Architecture</a>
+    <a href="/security.html" class="nav-link">Security</a>
+    <a href="/contact.html" class="btn btn-primary">Book Demo</a>
+  </div>
+
+  <!-- ═══ Hero Section ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid-lines"></div>
+      <div class="hero-glow-orb hero-glow-orb-1"></div>
+      <div class="hero-glow-orb hero-glow-orb-2"></div>
+      <div class="hero-glow-orb hero-glow-orb-3"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="badge"><span class="badge-dot"></span> Enterprise AI Governance Platform</span>
+          </div>
+          <h1 class="hero-title">
+            Govern <span class="text-gradient">Every AI Request</span> Before Production
+          </h1>
+          <p class="hero-subtitle">
+            Route prompts and responses through deterministic policy checks: PII redaction, jailbreak blocking, schema
+            validation, numeric assertions, tenant policy enforcement, and audit evidence.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact.html" class="btn btn-primary btn-lg">Book a Demo</a>
+            <a href="/architecture.html" class="btn btn-outline btn-lg">View Workflow →</a>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <div class="hero-metric-value" data-counter="5" data-suffix="+">0</div>
+              <div class="hero-metric-label">Runtime Gates</div>
+            </div>
+            <div>
+              <div class="hero-metric-value" data-counter="4" data-suffix="">0</div>
+              <div class="hero-metric-label">Policy Formats</div>
+            </div>
+            <div>
+              <div class="hero-metric-value">Audit</div>
+              <div class="hero-metric-label">Ready Logs</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-terminal">
+            <div class="hero-terminal-bar">
+              <span class="code-dot code-dot-red"></span>
+              <span class="code-dot code-dot-yellow"></span>
+              <span class="code-dot code-dot-green"></span>
+              <span class="hero-terminal-title">ansark.yaml</span>
+            </div>
+            <div class="hero-terminal-body">
+              <span class="yaml-line"><span class="code-comment"># Runtime AI Governance Policy</span></span>
+              <span class="yaml-line"><span class="code-key">ansark:</span></span>
+
+              <span class="yaml-line"> <span class="code-key">gateway:</span></span>
+              <span class="yaml-line"> <span class="code-key">tenant_policy:</span> <span
+                  class="code-value">enforced</span></span>
+              <span class="yaml-line"> <span class="code-key">pii_redaction:</span> <span
+                  class="code-keyword">true</span></span>
+              <span class="yaml-line"> <span class="code-key">jailbreak_blocking:</span> <span
+                  class="code-keyword">true</span></span>
+
+              <span class="yaml-line"> <span class="code-key">post_response:</span></span>
+              <span class="yaml-line"> <span class="code-key">schema_validation:</span> <span
+                  class="code-value">required</span></span>
+              <span class="yaml-line"> <span class="code-key">numeric_assertions:</span> <span
+                  class="code-value">checked</span></span>
+
+              <span class="yaml-line"> <span class="code-key">audit:</span></span>
+              <span class="yaml-line"> <span class="code-key">hash_chain:</span> <span
+                  class="code-value">enabled</span></span>
+              <span class="yaml-line"> <span class="code-key">request_id:</span> <span
+                  class="code-value">propagated</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Trust Bar ═══ -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-label">Built for Compliance-First Industries</div>
+      <div class="trust-logos">
+        <div class="trust-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.315 48.315 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+          </svg> Banking</div>
+        <div class="trust-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+          </svg> Payments</div>
+        <div class="trust-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.315 48.315 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+          </svg> NBFC</div>
+        <div class="trust-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+          </svg> Fintech</div>
+        <div class="trust-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+          </svg> SaaS</div>
+        <div class="trust-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+          </svg> AI/ML</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Problem Section ═══ -->
+  <section class="section" id="problem">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label">The Problem</span>
+        <h2 class="section-title">Ungoverned AI is <span class="text-gradient">Not Production Safe</span></h2>
+        <p class="section-subtitle">Enterprises are adding LLMs to real workflows, but prompts, outputs, tenant data,
+          and policy decisions still move without a deterministic control layer.</p>
+      </div>
+      <div class="grid grid-4 problem-grid stagger-children">
+        <div class="card problem-card">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg></div>
+          <div class="card-title">Policy Bypass Risk</div>
+          <p class="card-text">Prompts can ask models to ignore instructions, reveal hidden context, or bypass internal
+            policy controls.</p>
+        </div>
+        <div class="card problem-card">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z" />
+            </svg></div>
+          <div class="card-title">Sensitive Data Exposure</div>
+          <p class="card-text">PII, customer identifiers, and regulated data can leave the application before teams have
+            proof that it was checked.</p>
+        </div>
+        <div class="card problem-card">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg></div>
+          <div class="card-title">Unvalidated Outputs</div>
+          <p class="card-text">LLM responses can break schemas, invent values, or return business numbers that violate
+            approved rate cards.</p>
+        </div>
+        <div class="card problem-card">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg></div>
+          <div class="card-title">No Audit Evidence</div>
+          <p class="card-text">Security, compliance, and risk teams need traceable decisions, not screenshots or manual
+            review notes after the fact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Solution Section ═══ -->
+  <section class="section" id="solution" style="background: var(--color-bg-secondary);">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label">The Solution</span>
+        <h2 class="section-title">A Policy-First <span class="text-gradient-accent">AI Control Plane</span></h2>
+        <p class="section-subtitle">ANSARK places a deterministic governance layer around enterprise AI: every request is
+          authenticated, checked, enforced, validated, logged, and reportable.</p>
+      </div>
+      <div class="grid grid-3 stagger-children">
+        <div class="card solution-card">
+          <div class="card-icon" style="background: rgba(6, 214, 160, 0.1); border-color: rgba(6, 214, 160, 0.2);"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg></div>
+          <div class="card-title">Runtime AI Gateway</div>
+          <p class="card-text">Intercept AI requests before and after the model call with PII redaction, jailbreak
+            controls, schema validation, numeric checks, and tenant policy enforcement.</p>
+        </div>
+        <div class="card solution-card">
+          <div class="card-icon" style="background: rgba(6, 214, 160, 0.1); border-color: rgba(6, 214, 160, 0.2);"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+            </svg></div>
+          <div class="card-title">Policy Compiler</div>
+          <p class="card-text">Convert plain-language access policies into deterministic Cedar, OPA/Rego, Governance
+            YAML, and XACML outputs that engineering teams can enforce.</p>
+        </div>
+        <div class="card solution-card">
+          <div class="card-icon" style="background: rgba(6, 214, 160, 0.1); border-color: rgba(6, 214, 160, 0.2);"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg></div>
+          <div class="card-title">Compliance Evidence Automation</div>
+          <p class="card-text">Use regulatory document extraction as a control source: RBI/DPSS clauses become
+            reviewable controls that feed policy lifecycle and audit workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Pipeline Section ═══ -->
+  <section class="section pipeline" id="pipeline">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label">Technical Pipeline</span>
+        <h2 class="section-title">End-to-End <span class="text-gradient">AI Governance Flow</span></h2>
+      </div>
+      <div class="pipeline-flow animate-in">
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">1</div>
+          <div class="pipeline-step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg></div>
+          <div class="pipeline-step-title">AI Request</div>
+          <div class="pipeline-step-desc">App sends prompt and tenant context</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">2</div>
+          <div class="pipeline-step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M14.25 7.5l7.5-7.5m-7.5 7.5l7.5 7.5m-7.5-7.5L5.25 16.5m0 0a2.25 2.25 0 10-3.182 3.182 2.25 2.25 0 003.182-3.182zm0 0l2.25-2.25M5.25 7.5a2.25 2.25 0 11-3.182-3.182 2.25 2.25 0 013.182 3.182zm0 0L12 12" />
+            </svg></div>
+          <div class="pipeline-step-title">Auth & Quota</div>
+          <div class="pipeline-step-desc">JWT/API key and rate limit check</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">3</div>
+          <div class="pipeline-step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.829 1.58-1.995 2.052-.367 3.67-1.985 4.037-4.037.166-.922.982-1.58 1.965-1.58 1.25 0 2.158-1.18 1.932-2.408A12.06 12.06 0 0018 3.03M14.25 18V18zm-4.5 0v-.192c0-.983-.658-1.829-1.58-1.995-2.052-.367-3.67-1.985-4.037-4.037-.166-.922-.982-1.58-1.965-1.58-1.25 0-2.158-1.18-1.932-2.408A12.06 12.06 0 016 3.03M9.75 18V18z" />
+            </svg></div>
+          <div class="pipeline-step-title">Pre-LLM Gates</div>
+          <div class="pipeline-step-desc">PII, jailbreak, and tenant policy checks</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">4</div>
+          <div class="pipeline-step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+            </svg></div>
+          <div class="pipeline-step-title">Policy Resolve</div>
+          <div class="pipeline-step-desc">Load signed tenant controls</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">5</div>
+          <div class="pipeline-step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg></div>
+          <div class="pipeline-step-title">LLM Call</div>
+          <div class="pipeline-step-desc">Forward only approved payload</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">6</div>
+          <div class="pipeline-step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5M11.622 11.622a2.25 2.25 0 113.182-3.182 2.25 2.25 0 01-3.182 3.182z" />
+            </svg></div>
+          <div class="pipeline-step-title">Post-LLM Validate</div>
+          <div class="pipeline-step-desc">Schema and numeric assertions</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">7</div>
+          <div class="pipeline-step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+            </svg></div>
+          <div class="pipeline-step-title">Audit</div>
+          <div class="pipeline-step-desc">Hash-chained decision evidence</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-step-num">8</div>
+          <div class="pipeline-step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg></div>
+          <div class="pipeline-step-title">Report</div>
+          <div class="pipeline-step-desc">Governance and risk reporting</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Proof Section ═══ -->
+  <section class="section" id="proof">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label">Working Technical Proof</span>
+        <h2 class="section-title">Governance Engine, <span class="text-gradient">Not Just a Landing Page</span></h2>
+        <p class="section-subtitle">The current system includes a runtime AI gateway, policy compiler, audit pipeline,
+          and RBI/DPSS control automation corpus that proves the control layer can be automated end to end.</p>
+      </div>
+      <div class="proof-layout">
+        <div class="proof-rules stagger-children">
+          <div class="proof-rule">
+            <div class="proof-rule-icon obligation"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">rbi_it_15</div>
+              <div class="proof-rule-name">Audit trail obligation</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+          <div class="proof-rule">
+            <div class="proof-rule-icon obligation"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">rbi_it_16</div>
+              <div class="proof-rule-name">Crypto compliance</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+          <div class="proof-rule">
+            <div class="proof-rule-icon obligation"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">rbi_it_19</div>
+              <div class="proof-rule-name">MFA / privileged access</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+          <div class="proof-rule">
+            <div class="proof-rule-icon frequency"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">rbi_it_26a</div>
+              <div class="proof-rule-name">VA every 6 months</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+          <div class="proof-rule">
+            <div class="proof-rule-icon frequency"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">rbi_it_26b</div>
+              <div class="proof-rule-name">PT every 12 months</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+          <div class="proof-rule">
+            <div class="proof-rule-icon frequency"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">rbi_it_29</div>
+              <div class="proof-rule-name">DR drill half-yearly</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+        </div>
+        <div class="proof-rules stagger-children">
+          <div class="proof-rule">
+            <div class="proof-rule-icon obligation"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">dpss_15</div>
+              <div class="proof-rule-name">Least privilege access</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+          <div class="proof-rule">
+            <div class="proof-rule-icon deadline"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">dpss_21</div>
+              <div class="proof-rule-name">Patch within 24 hours</div>
+            </div>
+            <span class="proof-rule-badge review">Review</span>
+          </div>
+          <div class="proof-rule">
+            <div class="proof-rule-icon deadline"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0m5.714 0H9" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">dpss_22</div>
+              <div class="proof-rule-name">Incident report within 6hrs</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+          <div class="proof-rule">
+            <div class="proof-rule-icon retention"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">dpss_27e</div>
+              <div class="proof-rule-name">Audit log retention 5 years</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+          <div class="proof-rule">
+            <div class="proof-rule-icon cooling"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg></div>
+            <div class="proof-rule-content">
+              <div class="proof-rule-id">dpss_31g</div>
+              <div class="proof-rule-name">Cooling period 12 hours</div>
+            </div>
+            <span class="proof-rule-badge approved">Approved</span>
+          </div>
+          <!-- Stats Summary -->
+          <div class="card" style="margin-top: var(--space-4); text-align: center; padding: var(--space-6);">
+            <div style="display: flex; justify-content: space-around;">
+              <div>
+                <div style="font-size: var(--text-2xl); font-weight: 800; color: var(--color-success);">91%</div>
+                <div style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: 4px;">
+                  AUTO-APPROVED</div>
+              </div>
+              <div>
+                <div style="font-size: var(--text-2xl); font-weight: 800; color: var(--color-warning);">9%</div>
+                <div style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: 4px;">NEEDS REVIEW
+                </div>
+              </div>
+              <div>
+                <div style="font-size: var(--text-2xl); font-weight: 800; color: var(--color-danger);">0%</div>
+                <div style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: 4px;">REJECTED
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Stats Section ═══ -->
+  <section class="section stats-section" style="background: var(--color-bg-secondary);">
+    <div class="container">
+      <div class="grid grid-4 animate-in">
+        <div class="stat">
+          <div class="stat-value" data-counter="5" data-suffix="+">0</div>
+          <div class="stat-label">Runtime Control Gates</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" data-counter="4" data-suffix="">0</div>
+          <div class="stat-label">Policy Output Formats</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" data-counter="11" data-suffix="">0</div>
+          <div class="stat-label">Regulatory Proof Rules</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">Hash</div>
+          <div class="stat-label">Tamper-Evident Audit</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Enterprise Features ═══ -->
+  <section class="section enterprise-features" id="features">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label">Enterprise Ready</span>
+        <h2 class="section-title">AI Governance With <span class="text-gradient">Runtime Enforcement</span></h2>
+        <p class="section-subtitle">ANSARK is designed as a production control layer for LLM-enabled workflows: policy
+          enforcement, safety checks, observability, and auditability in one path.</p>
+      </div>
+      <div class="grid grid-3 stagger-children">
+        <div class="card feature-card-large">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg></div>
+          <div class="card-title">AI Gateway Enforcement</div>
+          <p class="card-text">PII redaction, schema validation, jailbreak detection, and token budget enforcement on
+            every AI request.</p>
+          <div class="feature-list">
+            <div class="feature-list-item">PII detection & redaction</div>
+            <div class="feature-list-item">Schema validation gates</div>
+            <div class="feature-list-item">Jailbreak pattern blocking</div>
+          </div>
+        </div>
+        <div class="card feature-card-large">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+            </svg></div>
+          <div class="card-title">Audit & Compliance Logs</div>
+          <p class="card-text">Hash-chained, tamper-evident audit logs with full traceability from source clause to
+            runtime decision.</p>
+          <div class="feature-list">
+            <div class="feature-list-item">Hash-chained log integrity</div>
+            <div class="feature-list-item">Source clause traceability</div>
+            <div class="feature-list-item">5-year retention ready</div>
+          </div>
+        </div>
+        <div class="card feature-card-large">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" width="1em" height="1em">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+            </svg></div>
+          <div class="card-title">Tenant Isolation</div>
+          <p class="card-text">Multi-tenant architecture with strict data isolation, JWT/API key authentication, and
+            rate limiting per tenant.</p>
+          <div class="feature-list">
+            <div class="feature-list-item">Per-tenant data isolation</div>
+            <div class="feature-list-item">JWT + API key auth</div>
+            <div class="feature-list-item">Rate limiting & quotas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA Section ═══ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box animate-in">
+        <h2 class="cta-title">Ready to Govern <span class="text-gradient">AI in Production</span>?</h2>
+        <p class="cta-subtitle">See how ANSARK protects LLM workflows with deterministic controls, audit evidence, and
+          policy automation.</p>
+        <div class="cta-actions">
+          <a href="/contact.html" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="/architecture.html" class="btn btn-outline btn-lg">View Architecture →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-name"><img src="/ansark-logo.svg" alt="ANSARK Logo"
+              style="height: 32px; width: auto;"></div>
+          <p class="footer-brand-desc">We help regulated teams govern AI workflows with deterministic controls,
+            audit-ready evidence, and policy automation.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Platform</div>
+          <div class="footer-links">
+            <a href="/product.html" class="footer-link">Product</a>
+            <a href="/architecture.html" class="footer-link">Architecture</a>
+            <a href="/security.html" class="footer-link">Security</a>
+            <a href="/solutions.html" class="footer-link">Solutions</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <div class="footer-links">
+            <a href="/solutions.html" class="footer-link">Banking</a>
+            <a href="/solutions.html" class="footer-link">Payments</a>
+            <a href="/solutions.html" class="footer-link">Fintech</a>
+            <a href="/solutions.html" class="footer-link">SaaS</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="/contact.html" class="footer-link">Contact</a>
+            <a href="/contact.html" class="footer-link">Book Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 ANSARK. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

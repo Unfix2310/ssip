@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — ANSARK AI Governance Platform</title>
+  <meta name="description" content="ANSARK platform: runtime AI gateway, deterministic policy compiler, audit workflow, and regulatory control automation for governed LLM systems.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%233b82f6'/><text x='50' y='68' text-anchor='middle' font-size='50' font-weight='900' fill='white'>A</text></svg>">
+  <link rel="stylesheet" href="/styles/design-system.css">
+  <link rel="stylesheet" href="/styles/components.css">
+  <link rel="stylesheet" href="/styles/pages.css">
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav" id="main-nav"><div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/ansark-logo.svg" alt="ANSARK Logo" style="height: 32px; width: auto;"></a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/product.html" class="nav-link active">Product</a>
+      <a href="/solutions.html" class="nav-link">Solutions</a>
+      <a href="/architecture.html" class="nav-link">Architecture</a>
+      <a href="/security.html" class="nav-link">Security</a>
+    </div>
+    <a href="/contact.html" class="btn btn-primary btn-sm nav-cta">Book Demo</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div></nav>
+  <div class="nav-mobile" id="mobile-menu">
+    <a href="/" class="nav-link">Home</a><a href="/product.html" class="nav-link">Product</a><a href="/solutions.html" class="nav-link">Solutions</a>
+    <a href="/architecture.html" class="nav-link">Architecture</a><a href="/security.html" class="nav-link">Security</a>
+    <a href="/contact.html" class="btn btn-primary">Book Demo</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <span class="badge" style="margin-bottom: var(--space-4);"><span class="badge-dot"></span> Platform Overview</span>
+      <h1 class="page-hero-title">The <span class="text-gradient">ANSARK</span> Platform</h1>
+      <p class="page-hero-subtitle">End-to-end AI governance — from tenant policy and runtime enforcement to audit evidence and regulatory control automation.</p>
+    </div>
+  </section>
+
+  <!-- Feature 1: Runtime Gateway -->
+  <section class="section">
+    <div class="container">
+      <div class="product-feature animate-in">
+        <div>
+          <div class="product-feature-tag">Runtime Governance</div>
+          <h2 class="product-feature-title">AI Governance <span class="text-gradient">Gateway</span></h2>
+          <p class="product-feature-desc">Place ANSARK between your application and LLM provider. Every request is authenticated, checked against tenant policy, redacted when needed, and validated again before it reaches the user.</p>
+          <div class="feature-list">
+            <div class="feature-list-item">API key / JWT tenant enforcement</div>
+            <div class="feature-list-item">PII redaction before model calls</div>
+            <div class="feature-list-item">Jailbreak and semantic risk gates</div>
+            <div class="feature-list-item">Schema and numeric post-response checks</div>
+            <div class="feature-list-item">Retry, circuit breaker, and request tracing</div>
+          </div>
+        </div>
+        <div class="product-feature-visual">
+          <div class="code-block" style="width:100%;">
+            <div class="code-block-header"><span class="code-dot code-dot-red"></span><span class="code-dot code-dot-yellow"></span><span class="code-dot code-dot-green"></span><span class="code-label">gateway_pipeline.log</span></div>
+            <span class="code-line"><span class="code-comment"># POST /v1/gateway/chat</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> auth: <span class="code-string">tenant scope verified</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> pii: <span class="code-value">PAN + Aadhaar redacted</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> jailbreak: <span class="code-string">clean</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> upstream: <span class="code-type">circuit closed</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> schema: <span class="code-string">valid JSON</span></span>
+            <span class="code-line"><span class="code-value"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg> response allowed + audited</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container"><div class="divider"></div></div>
+
+  <!-- Feature 2: Policy Compiler -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="product-feature animate-in">
+        <div>
+          <div class="product-feature-tag">Policy System</div>
+          <h2 class="product-feature-title">Deterministic <span class="text-gradient">Policy Compiler</span></h2>
+          <p class="product-feature-desc">Turn natural-language security rules into canonical policy IR, then compile them into enforcement-ready formats. The LLM only extracts structure; validation, normalization, compilation, and verification are deterministic.</p>
+          <div class="feature-list">
+            <div class="feature-list-item">Canonical principal / action / resource mapping</div>
+            <div class="feature-list-item">Cedar, OPA/Rego, YAML, and XACML output</div>
+            <div class="feature-list-item">Schema validation before compilation</div>
+            <div class="feature-list-item">Confidence scoring and review metadata</div>
+            <div class="feature-list-item">Policy versioning and rollback support</div>
+          </div>
+        </div>
+        <div class="product-feature-visual">
+          <div class="code-block" style="width:100%;">
+            <div class="code-block-header"><span class="code-dot code-dot-red"></span><span class="code-dot code-dot-yellow"></span><span class="code-dot code-dot-green"></span><span class="code-label">policy_ir.json</span></div>
+            <span class="code-line">{</span>
+            <span class="code-line">  <span class="code-key">"effect"</span>: <span class="code-string">"permit"</span>,</span>
+            <span class="code-line">  <span class="code-key">"principal"</span>: <span class="code-type">"developers"</span>,</span>
+            <span class="code-line">  <span class="code-key">"action"</span>: <span class="code-type">"read"</span>,</span>
+            <span class="code-line">  <span class="code-key">"resource"</span>: <span class="code-type">"server_logs"</span>,</span>
+            <span class="code-line">  <span class="code-key">"compiler_targets"</span>: [</span>
+            <span class="code-line">    <span class="code-value">"cedar"</span>, <span class="code-value">"opa"</span>, <span class="code-value">"yaml"</span>, <span class="code-value">"xacml"</span></span>
+            <span class="code-line">  ],</span>
+            <span class="code-line">  <span class="code-key">"routing"</span>: <span class="code-value">"approved"</span></span>
+            <span class="code-line">}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container"><div class="divider"></div></div>
+
+  <!-- Feature 3: Confidence Routing -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="product-feature animate-in">
+        <div>
+          <div class="product-feature-tag">Governance Workflow</div>
+          <h2 class="product-feature-title">Confidence <span class="text-gradient-accent">Routing</span></h2>
+          <p class="product-feature-desc">Policy and control changes should not silently move to production. ANSARK scores extraction and resolution quality, then routes changes to approved, review, enrichment, or rejected states.</p>
+          <div class="feature-list">
+            <div class="feature-list-item">Per-field extraction confidence</div>
+            <div class="feature-list-item">Resolution confidence vs catalog</div>
+            <div class="feature-list-item">Automatic approval for high-confidence</div>
+            <div class="feature-list-item">Human review queue for edge cases</div>
+          </div>
+        </div>
+        <div class="product-feature-visual">
+          <div style="display:flex;flex-direction:column;gap:var(--space-4);width:100%;">
+            <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-4);background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:var(--radius-md);">
+              <span style="font-size:1.5rem;"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></span>
+              <div>
+                <div style="font-weight:600;font-size:var(--text-sm);">Approved (≥ 0.85)</div>
+                <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);">Ready for policy compilation</div>
+              </div>
+              <div style="margin-left:auto;font-weight:800;color:var(--color-success);">91%</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-4);background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius-md);">
+              <span style="font-size:1.5rem;"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></span>
+              <div>
+                <div style="font-weight:600;font-size:var(--text-sm);">Review Required (0.6–0.85)</div>
+                <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);">Routed to compliance analyst</div>
+              </div>
+              <div style="margin-left:auto;font-weight:800;color:var(--color-warning);">9%</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-4);background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:var(--radius-md);">
+              <span style="font-size:1.5rem;"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg></span>
+              <div>
+                <div style="font-weight:600;font-size:var(--text-sm);">Rejected (&lt; 0.4)</div>
+                <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);">Flagged for manual extraction</div>
+              </div>
+              <div style="margin-left:auto;font-weight:800;color:var(--color-danger);">0%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container"><div class="divider"></div></div>
+
+  <!-- Feature 4: Regulatory Automation -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="product-feature animate-in">
+        <div>
+          <div class="product-feature-tag">Compliance Input Layer</div>
+          <h2 class="product-feature-title">Regulatory Control <span class="text-gradient">Automation</span></h2>
+          <p class="product-feature-desc">Regulatory documents become one source for governance policy. RBI/DPSS clauses can be extracted into structured controls, reviewed by humans, and connected to the same policy lifecycle as runtime AI controls.</p>
+          <div class="feature-list">
+            <div class="feature-list-item">PDF text extraction and section splitting</div>
+            <div class="feature-list-item">ControlIR with temporal and evidence fields</div>
+            <div class="feature-list-item">Catalog normalization for subject/action/resource</div>
+            <div class="feature-list-item">Review queue for low-confidence controls</div>
+            <div class="feature-list-item">Governance YAML output for audit evidence</div>
+          </div>
+        </div>
+        <div class="product-feature-visual">
+          <div class="code-block" style="width:100%;">
+            <div class="code-block-header"><span class="code-dot code-dot-red"></span><span class="code-dot code-dot-yellow"></span><span class="code-dot code-dot-green"></span><span class="code-label">control_extract.log</span></div>
+            <span class="code-line"><span class="code-comment"># RBI/DPSS rule → governance control</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> section: <span class="code-value">26a</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> action: <span class="code-string">conduct_va</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> resource: <span class="code-string">critical_systems_dmz</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> temporal: <span class="code-value">every_6_months</span></span>
+            <span class="code-line"><span class="code-keyword">→</span> routing: <span class="code-type">approved</span></span>
+            <span class="code-line"><span class="code-value"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="1em" height="1em"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg> compiled to Governance YAML</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box animate-in">
+        <h2 class="cta-title">See the Platform <span class="text-gradient">In Action</span></h2>
+        <p class="cta-subtitle">Book a technical walkthrough and see how ANSARK governs AI requests, policies, and compliance evidence.</p>
+        <div class="cta-actions">
+          <a href="/contact.html" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="/architecture.html" class="btn btn-outline btn-lg">View Architecture →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer"><div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-brand-name"><img src="/ansark-logo.svg" alt="ANSARK Logo" style="height: 32px; width: auto;"></div><p class="footer-brand-desc">AI governance and policy enforcement for regulated enterprises.</p></div>
+      <div><div class="footer-col-title">Platform</div><div class="footer-links"><a href="/product.html" class="footer-link">Product</a><a href="/architecture.html" class="footer-link">Architecture</a><a href="/security.html" class="footer-link">Security</a></div></div>
+      <div><div class="footer-col-title">Industries</div><div class="footer-links"><a href="/solutions.html" class="footer-link">Banking</a><a href="/solutions.html" class="footer-link">Payments</a><a href="/solutions.html" class="footer-link">Fintech</a></div></div>
+      <div><div class="footer-col-title">Company</div><div class="footer-links"><a href="/contact.html" class="footer-link">Contact</a><a href="/contact.html" class="footer-link">Book Demo</a></div></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copyright">© 2026 ANSARK. All rights reserved.</div><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </div></footer>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
